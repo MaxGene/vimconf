@@ -1,41 +1,8 @@
-
-" An example for a vimrc file.
-"
-" Maintainer: Bram Moolenaar <Bram@vim.org>
-" Last change: 2008 Dec 17
-"
-" To use it, copy it to
-" for Unix and OS/2: ~/.vimrc
-" for Amiga: s:.vimrc
-" for MS-DOS and Win32: $VIM\_vimrc
-" for OpenVMS: sys$login:.vimrc
-
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
-""""""""""""""""""""""""""""
-" Generic configs
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
 set nocompatible
-
-" Enable pathogen. Filetype has to be set off for this part.
-" filetype off
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
-
 " Set the leader key for other shortcuts
 let mapleader = ","
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-
-" ,v brings up my .vimrc
-" " ,V reloads it -- making all changes active (have to save first)
-map <leader>v :sp ~/.vimrc<CR><C-W>_
-map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR> ":echo 'vimrc reloaded'"<CR>
 
 set wildmode=longest:full
 set wildmenu
@@ -68,8 +35,6 @@ map <leader>g :GundoToggle<CR>
 
 " Less GUI in GVIM
 set guioptions=
-set guioptions+=c
-set guioptions+=e
 " Rainbow parens
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
@@ -91,18 +56,11 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
 set laststatus=2
 
-if has("vms")
-  set nobackup " do not keep a backup file, use versions instead
-else
-  set backup " keep a backup file
-endif
+set backup " keep a backup file
 set history=50 " keep 50 lines of command line history
 set ruler " show the cursor position all the time
 set showcmd " display incomplete commands
 set incsearch " do incremental searching
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
