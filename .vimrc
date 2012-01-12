@@ -1,3 +1,24 @@
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" Github repos
+Bundle 'scrooloose/nerdtree'
+Bundle 'sjl/gundo.vim'
+Bundle 'shemerey/vim-indexer'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'jpalardy/vim-slime'
+Bundle 'ervandew/supertab'
+Bundle 'majutsushi/tagbar'
+Bundle 'andrep/vimacs'
+Bundle 'rosenfeld/conque-term'
+Bundle 'lukerandall/haskellmode-vim'
+
+" vim-scripts repos
+Bundle 'project.vim'
+Bundle 'python.vim'
 set nocompatible
 " Set the leader key for other shortcuts
 let mapleader = ","
