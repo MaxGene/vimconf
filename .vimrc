@@ -4,7 +4,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Github repos
-Bundle 'scrooloose/nerdtree'
 Bundle 'sjl/gundo.vim'
 Bundle 'shemerey/vim-indexer'
 Bundle 'fholgado/minibufexpl.vim'
@@ -15,10 +14,17 @@ Bundle 'majutsushi/tagbar'
 Bundle 'andrep/vimacs'
 Bundle 'rosenfeld/conque-term'
 Bundle 'lukerandall/haskellmode-vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'tpope/vim-fugitive'
+Bundle 'aerosol/vim-compot'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'tpope/vim-surround'
+Bundle 'wincent/Command-T'
+Bundle 'airblade/vim-rooter'
 
 " vim-scripts repos
-Bundle 'project.vim'
 Bundle 'python.vim'
+Bundle 'The-NERD-tree'
 set nocompatible
 " Set the leader key for other shortcuts
 let mapleader = ","
@@ -47,9 +53,9 @@ map <left> :bp<cr>
 map TT :TagbarToggle <CR>
 let Tlist_Use_Right_Window = 1
 set tabstop=4
-
-" Open tasklist
-map <leader>t <Plug>TaskList
+set shiftwidth=4
+set expandtab
+set softtabstop=4
 
 " Open a gundo window to revert to previous writes of current file
 map <leader>g :GundoToggle<CR>
@@ -85,6 +91,9 @@ set incsearch " do incremental searching
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
+
+" vim-rooter
+autocmd rooter BufEnter *.py :Rooter
 
 " CTRL-U in insert mode deletes a lot. Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
@@ -160,7 +169,7 @@ if !exists(":DiffOrig")
 \ | wincmd p | diffthis
 endif
 " Liquid Carbon colorscheme and line numbers.
-colorscheme liquidcarbon
+colorscheme compot
 set number
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
