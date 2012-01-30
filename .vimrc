@@ -21,6 +21,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'tpope/vim-surround'
 Bundle 'wincent/Command-T'
 Bundle 'airblade/vim-rooter'
+Bundle 'nanotech/jellybeans.vim'
 
 " vim-scripts repos
 Bundle 'python.vim'
@@ -52,10 +53,13 @@ map <left> :bp<cr>
 "Taglist; hit TT to see functions/classes in new window
 map TT :TagbarToggle <CR>
 let Tlist_Use_Right_Window = 1
+
+" Indentation
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set softtabstop=4
+
 
 " Open a gundo window to revert to previous writes of current file
 map <leader>g :GundoToggle<CR>
@@ -165,9 +169,7 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 \ | wincmd p | diffthis
 endif
-" Liquid Carbon colorscheme and line numbers.
-colorscheme compot
-set number
+colorscheme jellybeans
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 "Word wrap.
@@ -184,6 +186,9 @@ set smartcase
 
 " Set the terminal's title
 set title
+
+" Relative line numbers
+set relativenumber
 
 " Easier access to NERDTree
 map <leader>n :NERDTreeToggle<CR>
